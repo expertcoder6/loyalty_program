@@ -1,0 +1,19 @@
+<%= form_with model: @reward, local: true do |f| %>
+	<div>
+		<%= f.label :name %>
+		<%= f.text_field :name,placeholder: "Enter reward name" %>
+	</div>
+
+	<div>
+		<%= f.label :value %>
+		<%= f.text_field :value,placeholder: "Enter reward point value" %>
+	</div>
+
+	<div>
+		<%= f.hidden_field :admin_id,value: current_user.id %>
+	</div>
+
+	<div>
+		<%= f.submit class: "btn btn-primary" %>
+	</div>
+<% end %>

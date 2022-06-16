@@ -1,0 +1,15 @@
+<div class="row">
+	<% @user_rewards.each do |reward| %>
+
+	<div class="card" style="width: 200px; display: inline-block;margin-top: 30px;">
+		<div class="card-body">
+			<h1><%= Reward.find(reward.reward_id).name%></h1>
+		</div>
+	</div>
+	<% end %>
+</div>
+
+<% if  !@user_rewards.present? %>
+	<h1>No Rewards available</h1>
+<% end %>
+<%= link_to "Back",root_path %>

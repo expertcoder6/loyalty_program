@@ -1,0 +1,21 @@
+
+<h1>Stores</h1>
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+	</tr>
+	<% @stores.each do |store| %>
+		<tr>
+			<td><%= store.id %>&nbsp;</td>
+			<td><%= image_tag("#{store.name}.png",height: "100%",width: "50%") rescue nil %></td>
+			<td><%= link_to store.name,store_products_path(store)%></td>
+		</tr>
+	<% end %>
+</table>
+<div >
+<%= link_to "user rewards",user_rewards_path(current_user.id),class: "btn btn-primary" %>
+<%= link_to "Points",user_points_path(current_user.id),class: "btn btn-primary" %>
+<%= link_to "Transaction",user_transactions_path(current_user.id),class: "btn btn-primary" %>
+
+</div>

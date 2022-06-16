@@ -1,0 +1,16 @@
+
+<h1>ADMIN</h1>
+<%= link_to "create reward", new_reward_path %>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+	</tr>
+	<% @rewards.each do |reward| %>
+		<tr>
+			<td><%= reward.id %></td>
+			<td><%= reward.name%></td>
+		</tr>
+	<% end %>
+</table>

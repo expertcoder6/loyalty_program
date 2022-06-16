@@ -1,0 +1,17 @@
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Price</th>
+	</tr>
+	<% @products.each do |product| %>
+		<tr>
+			<td><%= product.id %></td>
+			<td><%= image_tag("#{product.name}.png",height: "100px",width: "150px") rescue nil %></td>
+			<td><%= product.name%></td>
+			<td><%= product.price%></td>
+			<td><%= link_to "Buy Now",buy_now_store_product_path(@store,product),class: "btn btn-secondary"%></td>
+		</tr>
+	<% end %>
+</table>
+<%= link_to "Back",root_path %>
