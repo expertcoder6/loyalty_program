@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user = User.create(email: "admin@yopmail.com",password: "123456",password_confirmation: "123456",is_admin: true,birthdate_date: Time.now)
-User.create(email: "user@yopmail.com",password: "123456",password_confirmation: "123456",is_admin: false,birthdate_date: Time.now)
+user = User.create(email: "admin@yopmail.com",password: "123456",password_confirmation: "123456",is_admin: true,birthday: Time.now)
+User.create(email: "user@yopmail.com",password: "123456",password_confirmation: "123456",is_admin: false,birthday: Time.now)
 
 store1 = Store.create(name: "Amazon",admin_id: user.id,country_type: "National")
 store1.products.create(name: "Puma Shoes",price: 100,currency_type: "Dollar")

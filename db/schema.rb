@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_16_012157) do
+ActiveRecord::Schema.define(version: 2022_06_17_093221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 2022_06_16_012157) do
     t.integer "store_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "reason"
     t.index ["product_id"], name: "index_user_rewards_on_product_id"
     t.index ["reward_id"], name: "index_user_rewards_on_reward_id"
     t.index ["user_id"], name: "index_user_rewards_on_user_id"
@@ -91,7 +92,7 @@ ActiveRecord::Schema.define(version: 2022_06_16_012157) do
     t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "birthdate_date"
+    t.datetime "birthday"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

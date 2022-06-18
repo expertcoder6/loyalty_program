@@ -9,4 +9,11 @@ class User < ApplicationRecord
   has_one :loyalty_point
   has_many :user_rewards
   has_one :plan
+
+  after_create :set_tier_plan
+ 
+
+  def set_tier_plan
+    Plan.find_or_create_by(user_id:self.id,plan_type: "standard tier")
+  end
 end
